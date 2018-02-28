@@ -43,5 +43,5 @@ def test_get_state_abbr_ny(init_states):
 def test_get_state_abbr_XX(init_states):
     assert init_states.by_abbr('XX') is None
 
-def test_get_50_states(init_states):
-    assert len(init_states.states) is 50
+def test_get_55_states(init_states):
+    assert len(init_states.states) is 55
