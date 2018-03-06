@@ -15,6 +15,9 @@ def init_states():
     states = States()
     return states
 
+def test_request_object_status_code_200(init_states):
+    assert init_states.response.status_code == 200
+
 
 def test_get_state_name_Illinois(init_states):
     assert init_states.by_name('Illinois')
@@ -42,3 +45,6 @@ def test_get_state_abbr_ny(init_states):
 
 def test_get_state_abbr_XX(init_states):
     assert init_states.by_abbr('XX') is None
+
+def test_get_55_states(init_states):
+    assert len(init_states.states) is 55
