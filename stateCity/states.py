@@ -28,9 +28,9 @@ class States(object):
         '''
         Load State details
         '''
-        response = requests.get(self.webService)
+        self.response = requests.get(self.webService)
 
-        for state in response.json()['RestResponse']['result']:
+        for state in self.response.json()['RestResponse']['result']:
             self.states[state['name']] = self.State(**state)
             self.stateAbbr[state['abbr']] = state['name']
 
